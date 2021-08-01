@@ -1,0 +1,24 @@
+{
+  "name": "zoom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build-dev": "webpack --mode development",
+    "dev": "webpack-dev-server --open --mode development"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.14.8",
+    "babel-loader": "^8.2.2",
+    "css-loader": "3.6.0",
+    "sass": "^1.36.0",
+    "sass-loader": "9.0.2",
+    "style-loader": "1.2.1",
+    "webpack": "4.44.2",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
