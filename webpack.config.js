@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
     mode: "development",
     // mode: "production",
-    entry: ["@babel/polyfill", "./src/index.js"],
+    entry: ["@babel/polyfill", "./src/index.ts"],
 
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -25,6 +25,12 @@ module.exports = {
                 },
             },
             {
+                test: /\.ts$/,
+                use: "",
+                exclude: /node_modules/,
+                use: ["ts-loader"],
+            },
+            {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },
@@ -33,5 +39,8 @@ module.exports = {
                 use: ["style-loader", "css-loader", "sass-loader"],
             },
         ],
+    },
+    resolve: {
+        extensions: [".tsx", ".ts", ".js"],
     },
 };

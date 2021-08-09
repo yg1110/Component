@@ -11,7 +11,7 @@ module.exports = {
     quoteProps: "as-needed", // 객체 속성에 쿼테이션 적용 방식
     semi: true, // 세미콜론 사용 여부
     singleQuote: false, // single 쿼테이션 사용 여부
-    tabWidth: 4, // 탭 너비
+    tabWidth: 2, // 탭 너비
     trailingComma: "all", // 여러 줄을 사용할 때, 후행 콤마 사용 방식
     useTabs: false, // 탭 사용 여부
     vueIndentScriptAndStyle: true, // Vue 파일의 script와 style 태그의 들여쓰기 여부 (v1.19.0)
