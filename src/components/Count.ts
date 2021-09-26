@@ -23,7 +23,7 @@ export default class Count extends Component {
       this.setState(this.key, this.count + 1);
     });
     this.addEvent("click", ".decrement", () => {
-      this.setState(this.key, this.count + 1);
+      this.setState(this.key, this.count - 1);
     });
   }
 }

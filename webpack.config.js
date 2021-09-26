@@ -11,6 +11,7 @@ module.exports = {
     publicPath: "/dist/",
     filename: "bundle.js",
   },
+
   module: {
     rules: [
       {
@@ -39,7 +40,14 @@ module.exports = {
       },
     ],
   },
+
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+  },
+
+  devServer: {
+    contentBase: path.join(__dirname, "public"),
+    historyApiFallback: true, //history기능 활성화
+    port: 8080,
   },
 };

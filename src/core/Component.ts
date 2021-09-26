@@ -15,9 +15,11 @@ export default class Component {
   }
 
   mounted() {}
-  template() {}
   setEvent() {}
   created() {}
+  template() {
+    return "";
+  }
 
   getState(key, defalut) {
     if (!this.#state[key]) this.#state[key] = defalut;
