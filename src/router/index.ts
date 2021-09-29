@@ -1,5 +1,4 @@
-import {$, removeAllChild} from "../utils/selecter";
-
+import {removeAllChild} from "../utils/selecter";
 let history = [];
 
 // 이전경로 호출함수
@@ -23,10 +22,8 @@ export const addHistory = value => {
   history.push(value);
 };
 
-export function Route(path) {
-  const parent = $(".router-dom");
-  removeAllChild(parent);
-
+export function subRoute(path) {
+  removeAllChild(this.subRouter);
   switch (path) {
     case "/item": {
       this.ItemAppender();
@@ -39,9 +36,6 @@ export function Route(path) {
       break;
     }
     default: {
-      this.ItemAppender();
-      this.Item();
-      this.ItemFilter();
       break;
     }
   }

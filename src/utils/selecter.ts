@@ -1,5 +1,5 @@
 // 엘리먼트 검색함수
-export function $(key: string): Element | boolean {
+export function $(key) {
   if (!key) {
     return false;
   }

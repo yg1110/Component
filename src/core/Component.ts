@@ -12,6 +12,7 @@ export default class Component {
     this.props = props;
     this.setup();
     this.setEvent();
+    return this;
   }
 
   mounted() {}
