@@ -16,8 +16,9 @@ function updateAttributes(oldNode, newNode) {
 export function updateElement(parent, newNode, oldNode) {
   // 1. oldNode만 있는 경우
   // oldNode를 parent에서 제거한다.
-  if (!newNode && oldNode) return oldNode.remove();
-
+  if (!newNode && oldNode) {
+    return oldNode.remove();
+  }
   // 2. newNode만 있는 경우
   // newNode를 parent에 추가한다.
   if (newNode && !oldNode) return parent.appendChild(newNode);

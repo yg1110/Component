@@ -1,5 +1,8 @@
-import {$, removeAllChild} from "../utils/selecter";
-
+import {$, createComponent, removeAllChild} from "../utils/selector";
+import ItemAppender from "../components/ItemAppender";
+import Item from "../components/Item";
+import ItemFilter from "../components/ItemFilter";
+import Count from "../components/Count";
 let history = [];
 
 // 이전경로 호출함수
@@ -23,25 +26,22 @@ export const addHistory = value => {
   history.push(value);
 };
 
-export function Route(path) {
-  const parent = $(".router-dom");
-  removeAllChild(parent);
+export function subRoute(path) {
+  const {$el} = this;
+  removeAllChild($el);
 
   switch (path) {
     case "/item": {
-      this.ItemAppender();
-      this.Item();
-      this.ItemFilter();
+      createComponent("header", $el, "append", ItemAppender);
+      createComponent("main", $el, "item", Item);
+      createComponent("footer", $el, "filter", ItemFilter);
       break;
     }
     case "/count": {
-      this.Count();
+      createComponent("div", $el, "count", Count);
       break;
     }
     default: {
-      this.ItemAppender();
-      this.Item();
-      this.ItemFilter();
       break;
     }
   }

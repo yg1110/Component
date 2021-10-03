@@ -4,19 +4,28 @@ import {updateElement} from "../utils/diff";
 
 export default class Component {
   #state = {};
+  event = [];
   props;
   $el;
 
   constructor($el, props = {}) {
     this.$el = $el;
     this.props = props;
-    this.setup();
     this.setEvent();
+    this.setup();
+    return this;
   }
 
   mounted() {}
   setEvent() {}
   created() {}
+
+  updated() {
+    this.created();
+    this.render();
+    this.mounted();
+  }
+
   template() {
     return "";
   }
@@ -28,19 +37,18 @@ export default class Component {
 
   setState(key, value) {
     this.#state[key] = value;
-    this.render();
+    this.updated();
   }
 
   setup() {
     observable(store.getState()); // state를 관찰한다.
     observe(() => {
       // state가 변경될 경우, 함수가 실행된다.
-      this.render();
+      this.updated();
     });
   }
 
   render() {
-    this.created();
     const {$el} = this;
 
     // 기존 Node를 복제한 후에 새로운 템플릿을 채워넣는다.
@@ -54,7 +62,6 @@ export default class Component {
     for (let i = 0; i < max; i++) {
       updateElement($el, newChildNodes[i], oldChildNodes[i]);
     }
-    this.mounted();
   }
 
   //이벤트 버블링
@@ -65,7 +72,7 @@ export default class Component {
     const isTarget = target =>
       children.includes(target) || target.closest(selector);
 
-    this.$el.addEventListener(eventType, currentEvent => {
+    return this.$el.addEventListener(eventType, currentEvent => {
       if (!isTarget(currentEvent.target)) return false;
       callback(currentEvent);
     });

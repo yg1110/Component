@@ -40,6 +40,7 @@ export default class Items extends Component {
       const seq = Number(target.closest("[data-seq]").dataset.seq);
       store.dispatch(deleteItem(seq));
     });
+
     this.addEvent("click", ".toggleBtn", ({target}) => {
       const seq = Number(target.closest("[data-seq]").dataset.seq);
       store.dispatch(toggleItem(seq));

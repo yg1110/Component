@@ -10,19 +10,26 @@ export default class Header extends Component {
     `;
   }
 
+  created() {
+    const {subRoute} = this.props;
+    subRoute("/item");
+  }
+
   setEvent() {
-    const {route} = this.props; //App에 있는 routing함수 바인딩
+    const {subRoute} = this.props;
     this.addEvent("click", ".item", () => {
-      route("/item");
+      subRoute("/item");
     });
 
     this.addEvent("click", ".count", () => {
-      route("/count");
+      subRoute("/count");
     });
 
     this.addEvent("click", ".back", () => {
       const path = getHistory();
-      if (path) route(path);
+      if (path) {
+        subRoute(path);
+      }
       syncHistory();
     });
   }

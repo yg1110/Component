@@ -24,9 +24,6 @@ export const observable = obj => {
       },
       // observable에 등록한 변수(store.state)가 변경할 경우
       set(value) {
-        // if (_value === value) return;
-        // if (JSON.stringify(_value) === JSON.stringify(value)) return;
-
         _value = value;
         // observer 컬렉션에 새로운 값이 추가될경우 observe에 등록한 함수 실행
         // 현재 코드에서는 store.state에 값이 추가될경우
