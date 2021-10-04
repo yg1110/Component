@@ -13,7 +13,7 @@ export default class Root extends Component {
 
   mounted() {
     const header = $(".header");
-    this.$el = $(".sub-route");
+    this.el = $(".sub-route");
 
     new Header(header, {
       subRoute: subRoute.bind(this),
