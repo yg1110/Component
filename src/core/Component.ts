@@ -4,7 +4,6 @@ import {updateElement} from "../utils/diff";
 
 export default class Component {
   #state = {};
-  event = [];
   props;
   $el;
 

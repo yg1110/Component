@@ -1,0 +1,15 @@
+.header-title{
+    pointer-events: none;
+}
+.active {
+    color: #ff9697;
+}
+
+.active::after {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+}
+
+  

@@ -1,21 +1,20 @@
 import Component from "../core/Component";
-import Header from "../components/Header";
+import Nav from "../components/Nav";
 import {subRoute} from "../router";
 import {$} from "../utils/selector";
 
 export default class Root extends Component {
   template() {
     return `
-      <header class="header"></header>
+      <nav class="nav"></nav>
       <div class="sub-route"></div>
     `;
   }
 
   mounted() {
-    const header = $(".header");
     this.$el = $(".sub-route");
 
-    new Header(header, {
+    new Nav($("nav"), {
       subRoute: subRoute.bind(this),
     });
   }
