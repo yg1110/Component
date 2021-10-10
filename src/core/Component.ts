@@ -4,12 +4,8 @@ import {updateElement} from "../utils/diff";
 import {PropsType, StateType} from "../types/Component";
 
 export default class Component {
-  #state: StateType = {
-    count: 0,
-  };
-
+  #state = {};
   el: HTMLElement;
-
   props: PropsType;
 
   constructor(

@@ -1,3 +1,139 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Black+Han+Sans:400");
+@import url("https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean");
+
+@font-face {
+  font-family: "S-CoreDream-9Black";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BMJUA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$primary-color: #ff9697;
+$non-active-color: #8b8b8b;
+$backgroud-color: #fff;
+$default-font-color: #222;
+$default-box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Black Han Sans", sans-serif;
+  background: $backgroud-color;
+  color: $default-font-color;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+header {
+  text-align: center;
+  
+}
+
+header a,
+nav a {
+  width: 100%;
+  color: $primary-color;
+  padding: 20px 5px;
+  font-weight: 400px;
+  font-size: 35px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav li a {
+  color: $non-active-color;
+  font-size: 20px;
+  padding: 20px;
+}
+
+nav li:nth-child(1) {
+  pointer-events: none;
+}
+
+section,
+footer {
+  text-align: center;
+  background: $backgroud-color;
+  padding: 20px;
+  margin: 20px 0;
+  font-weight: 100;
+}
+
+footer {
+  border-top: 1px solid $non-active-color;
+}
+
+footer div {
+  display: flex;
+  align-items: center;
+}
+
+footer a,
+footer a:hover {
+  text-decoration: none;
+}
+
+footer p {
+  color: $non-active-color;
+  text-align: left;
+  width: 100%;
+}
+
+footer i {
+  color: $non-active-color;
+  padding: 20px;
+}
+
+img {
+  width: 100%;
+  height: 395px;
+  cursor: pointer;
+  transition: opacity 0.5s ease-out;
+  box-shadow: $default-box-shadow;
+  border-radius: 6px;
+}
+
+#app {
+  max-width: 1000px;
+  min-width: 1000px;
+  margin: 0 auto;
 }

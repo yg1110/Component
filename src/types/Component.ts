@@ -1,8 +1,8 @@
 import Component from "../core/Component";
-import ItemAppender from "../components/ItemAppender";
-import Item from "../components/Item";
-import ItemFilter from "../components/ItemFilter";
-import Count from "../components/Count";
+import About from "../components/About";
+import Portfolio_2020 from "../components/Portfolio-2020";
+import Portfolio_2021 from "../components/Portfolio-2021";
+import Skill from "../components/Skill";
 
 export interface PropsType {
   subRoute: (path?: string) => void;
@@ -14,7 +14,7 @@ export interface StateType {
 
 export type ComponentType = Component;
 export type ComponentInstanceType =
-  | typeof ItemAppender
-  | typeof Item
-  | typeof ItemFilter
-  | typeof Count;
+  | typeof About
+  | typeof Portfolio_2020
+  | typeof Portfolio_2021
+  | typeof Skill;

@@ -1,7 +1,7 @@
 type ItemsType = {
-  seq: number;
-  contents: string;
-  active: boolean;
+  seq: number,
+  contents: string,
+  active: boolean,
 };
 
 export interface InitStateType {

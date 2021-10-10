@@ -1,8 +1,8 @@
 import {createComponent, removeAllChild} from "../utils/selector";
-import ItemAppender from "../components/ItemAppender";
-import Item from "../components/Item";
-import ItemFilter from "../components/ItemFilter";
-import Count from "../components/Count";
+import Portfolio_2020 from "../components/Portfolio-2020";
+import Portfolio_2021 from "../components/Portfolio-2021";
+import About from "../components/About";
+import Skill from "../components/Skill";
 import {ComponentType} from "../types/Component";
 
 let history: string[] = [];
@@ -33,14 +33,20 @@ export function subRoute(path: string): void {
   removeAllChild(el);
 
   switch (path) {
-    case "/item": {
-      createComponent("header", el, "append", ItemAppender);
-      createComponent("main", el, "item", Item);
-      createComponent("footer", el, "filter", ItemFilter);
+    case "/portfolio-2020": {
+      createComponent("main", el, "append", Portfolio_2020);
       break;
     }
-    case "/count": {
-      createComponent("div", el, "count", Count);
+    case "/portfolio-2021": {
+      createComponent("main", el, "append", Portfolio_2021);
+      break;
+    }
+    case "/about": {
+      createComponent("main", el, "append", About);
+      break;
+    }
+    case "/skill": {
+      createComponent("main", el, "append", Skill);
       break;
     }
     default: {
