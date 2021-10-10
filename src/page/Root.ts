@@ -12,7 +12,7 @@ export default class Root extends Component {
   }
 
   mounted() {
-    this.$el = $(".sub-route");
+    this.el = $(".sub-route");
 
     new Nav($("nav"), {
       subRoute: subRoute.bind(this),

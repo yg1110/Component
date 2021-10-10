@@ -1,7 +1,13 @@
 import {createStore} from "../core/Store";
+import {ActionType} from "../types/Store";
 
 // 초기 state의 값을 정의해준다.
 const initState = {};
+
+const initAction: ActionType = {
+  type: null,
+  payload: null,
+};
 
 // dispatch에서 사용될 type들을 정의해준다.
 

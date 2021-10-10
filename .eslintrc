@@ -1,17 +1,45 @@
 // .eslintrc
 {
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint", 
+    "eslint-plugin-prettier"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/eslint-recommended", 
+    "eslint-config-prettier"
+  ],
   "rules": {
     "prettier/prettier": ["error"],
     "no-console": "off",
     "spaced-comment": "off",
     "no-else-return": "off",
-    "import/prefer-default-export": "off"
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "class-methods-use-this":"off",
+    "react/sort-comp": "warn",
+    "react/prop-types": "warn", 
+    "no-param-reassign": "warn",
+    "no-restricted-syntax": "warn",
+    "no-unused-vars": "warn",
+    "no-new":"warn",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "mjs": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   ]
   },
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["src"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
   }

@@ -17,19 +17,17 @@ export default class App extends Component {
 
   mounted() {
     const {pathname} = window.location;
-    const router = $(".router-dom");
+    const router: HTMLElement = $(".router-dom");
 
     insertionComponent("header", $("header"));
     insertionComponent("footer", $("footer"));
 
     switch (pathname) {
       case "/": {
-        new Root(router);
-        break;
+        return new Root(router);
       }
       default: {
-        new NotFound(router);
-        break;
+        return new NotFound(router);
       }
     }
   }
