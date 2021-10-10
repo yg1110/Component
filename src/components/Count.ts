@@ -1,8 +1,10 @@
 import Component from "../core/Component";
 
 export default class Count extends Component {
-  key;
-  count;
+  key: string;
+
+  count: number;
+
   template() {
     return `
     <div>
@@ -15,7 +17,7 @@ export default class Count extends Component {
 
   created() {
     this.key = "count";
-    this.count = this.getState(this.key, 0);
+    this.count = this.getState(this.key);
   }
 
   setEvent() {
